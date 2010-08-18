@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://orangerb.com"
     gem.authors = ["David Haslem"]
     gem.add_dependency "flickraw-cached", ">= 0"
+    gem.add_dependency "orange-core", ">= 0"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings

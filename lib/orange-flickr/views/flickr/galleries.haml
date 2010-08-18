@@ -1,0 +1,5 @@
+%h1 Browse Photo Galleries
+- for set in resource.photosets
+  %h2
+    %a{:href => route_to(:flickr, set.id)}= set.title
+  %p= set.description.blank? ? "No description" : set.description 

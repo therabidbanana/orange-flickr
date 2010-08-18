@@ -1,5 +1,4 @@
-%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
-%script{:src => "/assets/_flickr_/js/yoxview/yoxview-init.js"}
+- packet.add_js("yoxview/yoxview-init.js", :module => "_flickr_")
 %script
-  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{attrs["photoset"]}"})});
+  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{attrs["photoset"] || photoset}"})});
 #flickr_gallery= '&nbsp;'
