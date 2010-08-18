@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{orange-flickr}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Haslem"]
@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
      "lib/orange-flickr.rb",
      "lib/orange-flickr/assets/js/yoxview/data/flickr.js",
      "lib/orange-flickr/assets/js/yoxview/data/flickr.min.js",
@@ -76,8 +77,11 @@ Gem::Specification.new do |s|
      "lib/orange-flickr/assets/js/yoxview/yoxview.css",
      "lib/orange-flickr/plugin.rb",
      "lib/orange-flickr/resources/flickr_resource.rb",
+     "lib/orange-flickr/views/flickr/galleries.haml",
      "lib/orange-flickr/views/flickr/gallery.haml",
      "lib/orange-flickr/views/flickr/photoset.haml",
+     "lib/orange-flickr/views/flickr/show.haml",
+     "orange-flickr.gemspec",
      "spec/orange-flickr_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -85,7 +89,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://orangerb.com}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{A gem that uses FlickRaw to integrate with orange}
   s.test_files = [
     "spec/orange-flickr_spec.rb",
@@ -96,17 +100,20 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<flickraw-cached>, [">= 0"])
+      s.add_runtime_dependency(%q<orange-core>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_development_dependency(%q<yard>, [">= 0"])
     else
       s.add_dependency(%q<flickraw-cached>, [">= 0"])
+      s.add_dependency(%q<orange-core>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<yard>, [">= 0"])
     end
   else
     s.add_dependency(%q<flickraw-cached>, [">= 0"])
+    s.add_dependency(%q<orange-core>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<yard>, [">= 0"])
   end
