@@ -5,7 +5,7 @@ class Orange::FlickrResource < Orange::Resource
   viewable :gallery, :photoset
   
   def stack_init
-    FlickRaw.api_key = orange.options["flickr_api_key"] || false
+    FlickRaw.api_key = orange.options["flickr_api_key"] || "d25ed6ad71472b633b11544a21da4f36"
     options["flickr_nsid"] = orange.options["flickr_nsid"] || false
   end
   

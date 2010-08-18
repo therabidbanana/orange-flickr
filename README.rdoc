@@ -2,23 +2,11 @@
 
 Includes snippets for pulling in Flickr photo galleries given an authentication token. You'll need a some info to use it:
 
-First, go register to create a new Flickr app here so you can have your own API keys with their own limits: 
+First, I recommend you go register to create a new Flickr app here so you can have your own API key with your own limits. Orange has a flickr api key by default, but it's really easy to get your own: 
 
    http://www.flickr.com/services/apps/create/apply
 
-Next, use the following script to get an auth-token from a specific user (fill in your API key and Shared secret first):
-
-   http://gist.github.com/535968
-
-The auth token you get will allow you to pull in the galleries of the particular user you've logged in as.
-
-With the api key, shared secret and auth token, you will be ready to use this plugin. Set these options in the config.yml or in the config.ru:
-
-   * "flickr_api_key"
-   * "flickr_secret"
-   * "flickr_auth_token"
-
-At this time there is no way to set an orange site to be able to work with multiple auth tokens, or to get the auth tokens in an easier way. We'll try to get to this soon.
+Set the "flickr_api_key" option with your new api key. Then get the user nsid for the photosets you want to use. Set the "flickr_nsid" option to that.
 
 Flickr Photosets are pulled in using yoxview, which is an MIT-licensed jQuery slideshow plugin. Learn more here:
 
