@@ -12,7 +12,7 @@ class Orange::FlickrResource < Orange::Resource
     options["flickr_nsid"] = orange.options["flickr_nsid"] || false
   end
   
-  def photosets(packet, opts = {})
+  def photosets
     if FlickRaw.api_key && options["flickr_nsid"]
       ret = {}
       sets = flickr.photosets.getList(:user_id => options["flickr_nsid"])
@@ -22,7 +22,7 @@ class Orange::FlickrResource < Orange::Resource
     end
   end
   
-  def gallery(packet, opts = {})
+  def gallery_url
     if options["flickr_nsid"]
       sets_url = FlickRaw::URL_PHOTOSTREAM + options["flickr_nsid"] + "/sets"
     else

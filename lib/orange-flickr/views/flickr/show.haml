@@ -2,5 +2,5 @@
 - gallery = resource.photosets.select{|set| set.id == packet["route.resource_id"]}.first
 %h2 Showing #{gallery.title}
 %script
-  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{resource.gallery + gallery.id}"})});
+  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{resource.gallery_url + '/' + gallery.id}"})});
 #flickr_gallery= '&nbsp;'
