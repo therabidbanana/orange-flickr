@@ -1,4 +1,4 @@
 - packet.add_js("yoxview/yoxview-init.js", :module => "_flickr_")
 %script
-  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{attrs["photoset"] || photoset}"})});
+  $(document).ready(function(){ $("#flickr_gallery").yoxview({ dataUrl: "#{attrs["photoset"] || photoset}", dataSourceOptions: {"imageSize": "large"}})});
 #flickr_gallery= '&nbsp;'
