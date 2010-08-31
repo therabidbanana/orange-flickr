@@ -1,8 +1,18 @@
-﻿/* YoxView v1.92 CSS file */
+﻿/* YoxView v2.0 CSS file */
 #yoxview .yoxview_bottom{ bottom: 0; }
 #yoxview .yoxview_right{ float: right; }
 #yoxview .yoxview_left{ float: left; }
 
+#yoxview_popupWrap
+{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+}
 #yoxview
 {
 	position: absolute;
@@ -12,10 +22,10 @@
 	overflow: hidden;
 	font-size: 10pt;
 }
-#yoxview a img{ border: none; }
+#yoxview a img, #yoxview_infoPanel a img{ border: none; }
 #yoxview a:focus{ outline: none; }
 #yoxview div.yoxview_imgPanel{ position: absolute; top: 0; left: 0; }
-#yoxview div.yoxview_imgPanel div.yoxview_mediaPanel
+#yoxview div.yoxview_mediaPanel
 { 
 	position: absolute; 
 	top: 0; left: 0; 
@@ -53,6 +63,9 @@
 	z-index: 4;
 	opacity: 0.6;
 	filter: alpha(opacity=60);
+	background-image: url(images/sprites.png);
+	background-repeat: no-repeat;
+	display: none;
 }
 
 #yoxview #yoxview_ajaxLoader img
@@ -69,14 +82,17 @@
 }
 #yoxview #yoxview_menuPanel
 { 
-	width: 150px; 
+	width: 145px; 
 	height: 42px; 
 	padding-top: 0px;
 	padding-right: 9px;
 	position: absolute; 
 	right: 0;
-	background-image: url(images/sprites.png); 
-	background-repeat: no-repeat;
+	background: url(images/sprites.png) no-repeat left -77px;
+	background: rgba(0, 0, 0, 0.8);
+	-moz-border-radius: 0 0 0 15px;
+	-webkit-border-radius: 0 0 0 15px;
+	border-radius: 0 0 0 15px;
 	top: -42px;
 }
 
@@ -96,14 +112,17 @@
 #yoxview #yoxview_menuPanel a span{ color: White; display: block; margin-bottom: 3px;  }
 #yoxview #yoxview_menuPanel a.last{ margin-left: 0; }
 #yoxview #yoxview_menuPanel a:focus{ outline: none; }
-#yoxview #yoxview_infoPanel
+#yoxview_infoPanel
 {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 0;
+	color: White;
+	z-index: 2;
+	overflow: hidden;
 }
-#yoxview #yoxview_infoPanelBack
+#yoxview_infoPanel #yoxview_infoPanelBack
 {
 	position: absolute;
 	width: 100%;
@@ -112,16 +131,15 @@
 	left: 0;
 	top: 0;
 }
-#yoxview #yoxview_infoPanelContent
+#yoxview_infoPanel #yoxview_infoPanelContent
 {
 	position: absolute;
 	width: 100%;
 	z-index: 2;
 	top: 0;
 	left: 0;
-	color: White;
 }
-#yoxview #yoxview_infoPanelContent span#yoxview_count
+#yoxview_infoPanel span#yoxview_count
 {
 	display: block;
 	width: 55px;
@@ -131,13 +149,13 @@
 	padding-top: 8px;
 	color: #bbb;
 }
-#yoxview #yoxview_infoPanelContent #yoxview_infoText
+#yoxview_infoPanel #yoxview_infoText
 {
 	margin: 0 55px;
 	font-size: 12pt;
 	padding: 5px 0;
 }
-#yoxview #yoxview_infoPanelContent #yoxview_infoText #yoxview_infoTextDescription
+#yoxview_infoPanel #yoxview_infoText #yoxview_infoTextDescription
 {
 	margin-top: 1em;
 	font-size: 10pt;
@@ -146,9 +164,9 @@
 	overflow: auto;
 	padding-right: 10px;
 }
-#yoxview #yoxview_infoPanelContent #yoxview_infoText a{ color: #a7d557; text-decoration: none; outline: none; }
-#yoxview #yoxview_infoPanelContent #yoxview_infoText a:hover{ color: #d5eeaa }
-#yoxview #yoxview_infoPanel a.yoxviewInfoLink
+#yoxview_infoPanel #yoxview_infoText a, #yoxview .yoxview_error a{ color: #a7d557; text-decoration: none; outline: none; }
+#yoxview_infoPanel #yoxview_infoText a:hover, #yoxview .yoxview_error a:hover{ color: #d5eeaa }
+#yoxview_infoPanel a.yoxviewInfoLink
 {
 	display: none;
 	opacity: 0.8;
@@ -156,7 +174,7 @@
 	margin-right: 5px;
 	margin-top: 5px;
 }
-#yoxview #yoxview_infoPanel a.yoxviewInfoLink:hover{ opacity: 1 }
+#yoxview_infoPanel a.yoxviewInfoLink:hover{ opacity: 1 }
 #yoxview #yoxview_helpPanel
 {
 	display: none;
@@ -189,11 +207,9 @@
 	position: absolute;
 	padding: 10px;
 }
-#yoxview .yoxview_error .errorUrl
-{
-	font-size: 10pt;
-}
+#yoxview .yoxview_error .errorUrl{ font-size: 10pt; }
 #yoxview .yoxview_top{ top: 0; width: 50%; }
+#yoxview .yoxview_element{ width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none; background: #333; }
 
 .yoxview-thumbnails a
 {
