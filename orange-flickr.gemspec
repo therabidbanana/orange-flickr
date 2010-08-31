@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Haslem"]
-  s.date = %q{2010-08-19}
+  s.date = %q{2010-08-31}
   s.description = %q{Adds flickr functionality to Orange}
   s.email = %q{therabidbanana@gmail.com}
   s.extra_rdoc_files = [
@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
      "lib/orange-flickr/assets/js/yoxview/jquery.yoxthumbs.js",
      "lib/orange-flickr/assets/js/yoxview/jquery.yoxthumbs.min.js",
      "lib/orange-flickr/assets/js/yoxview/jquery.yoxview-1.98.js",
-     "lib/orange-flickr/assets/js/yoxview/jquery.yoxview-1.98.min.js",
+     "lib/orange-flickr/assets/js/yoxview/jquery.yoxview-2.05.min.js",
      "lib/orange-flickr/assets/js/yoxview/lang/ar.js",
      "lib/orange-flickr/assets/js/yoxview/lang/bg.js",
      "lib/orange-flickr/assets/js/yoxview/lang/ca.js",
